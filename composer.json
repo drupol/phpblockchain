@@ -1,0 +1,51 @@
+{
+    "name": "drupol/phpblockchain",
+    "type": "library",
+    "description": "A blockchain implementation.",
+    "keywords": [
+        "blockchain",
+        "php"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Pol Dellaiera",
+            "email": "pol.dellaiera@protonmail.com"
+        }
+    ],
+    "require": {
+        "php": ">= 7.1.3",
+        "ext-hash": "*",
+        "ext-json": "*",
+        "drupol/phpmerkle": "^2.2"
+    },
+    "require-dev": {
+        "drupol/php-conventions": "^1",
+        "friends-of-phpspec/phpspec-code-coverage": "^4.3.2",
+        "infection/infection": "^0.11. || ^0.12.2 || ^0.13.6 || ^0.14.4 || ^0.15.0",
+        "jakub-onderka/php-parallel-lint": "^1.0",
+        "phpspec/phpspec": "^5.1.2 || ^6.1 || ^7",
+        "phpstan/phpstan": "^0.11.19",
+        "phpunit/php-code-coverage": "^6.1.4 || ^7"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "autoload": {
+        "psr-4": {
+            "drupol\\phpblockchain\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "tests\\drupol\\phpblockchain\\": "tests/"
+        }
+    },
+    "scripts": {
+        "bench": "./vendor/bin/phpbench run --report=project --store --precision=3",
+        "grumphp": "./vendor/bin/grumphp run",
+        "infection": "./vendor/bin/infection run -j 10",
+        "phpspec": "./vendor/bin/phpspec run",
+        "scrutinizer": "./vendor/bin/ocular code-coverage:upload --format=php-clover build/logs/clover.xml"
+    }
+}

@@ -1,0 +1,13 @@
+/composer.lock
+/vendor
+/bin
+/example/*.json
+/build
+/.php_cs.cache
+/summary.log
+/infection.log
+/debug.log
+/example/
+/.idea/
+/per-mutator.md
+!/test.php
